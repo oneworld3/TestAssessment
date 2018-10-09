@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon sever.js",
-    "client": "cd ../frontend/src/ && ng serve",
+    "client": "cd frontend/src/ && ng serve",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd .. && cd frontend && ng build --prod"
+    "build": "cd frontend && ng build --prod"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -25,13 +25,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://dalley8626@github.com/dalley8626/Advance-Internet-Programming-Assessment.git"
+    "url": "git+https://github.com/oneworld3/TestAssessment.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dalley8626/Advance-Internet-Programming-Assessment/issues"
+    "url": "https://github.com/oneworld3/TestAssessment/issues"
   },
-  "homepage": "https://github.com/dalley8626/Advance-Internet-Programming-Assessment#readme"
+  "homepage": "https://github.com/oneworld3/TestAssessment#readme"
 }
