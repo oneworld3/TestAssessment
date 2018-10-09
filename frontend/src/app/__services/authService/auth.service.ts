@@ -60,7 +60,7 @@ export class AuthService {
       .get(this.domain + '/users/profile', {headers: headers})
       .pipe(map(res => res.json()));
   }
-
+//storing user data
   storeUserData(token, user) {
     localStorage.setItem('id_token', token);
     //Local storage can only store string
