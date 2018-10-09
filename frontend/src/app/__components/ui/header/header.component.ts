@@ -16,7 +16,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 export class HeaderComponent implements OnInit {
 
   constructor(
-    private authService : AuthService,
+    public authService : AuthService,
     private router : Router,
     private flashMessagesService: FlashMessagesService
   ) { }
