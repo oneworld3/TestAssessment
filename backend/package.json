@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon sever.js",
     "client": "cd ../frontend/src/ && ng serve",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "cd .. && cd frontend && ng build --prod"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

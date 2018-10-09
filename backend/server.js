@@ -28,21 +28,20 @@ const ratings = require('./__routes/ratings');
 const dollarDefender = require('dollar-defender-middleware');
 
 //port number
-var port = 5000;
+var port = process.env.PORT || 8080;
+
+app.use(bodyParser.urlencoded({extended: false}));
 
 //prociding a static directory for front-end
-app.use(express.static(path.join(__dirname,'public')))
-
-
-
 
 //middleware
 app.use(bodyParser.json()); //Body parse that allows forms to be accepted as data
 app.use(dollarDefender(/* optionional config object */));
-app.use(cors({
-    origin: "http://localhost:4200"
-}));//cors middleware
+// app.use(cors({
+//     origin: "http://localhost:4200"
+// }));//cors middleware
 
+app.use(express.static(__dirname +'/public'));
 //Initialize the passport
 //Use the session
 app.use(passport.initialize());
@@ -55,8 +54,8 @@ app.use('/users', users);
 app.use('/subjects', subjects);
 app.use('/ratings', ratings);
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public', 'index.html'));
 })
 
 //start server
