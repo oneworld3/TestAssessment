@@ -1,0 +1,15 @@
+
+<!-- background image display according to the login status -->
+<div [ngClass]="{'bg': authService.notLoggedIn(), 'nobg': !authService.notLoggedIn()}">
+
+
+    <app-layout>
+    <app-header></app-header>
+    <flash-messages></flash-messages>
+    <!--TODO: Get this flash message going
+    <ng-flash-message></ng-flash-message> -->
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+    </app-layout>
+
+</div>
