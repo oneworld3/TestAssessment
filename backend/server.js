@@ -28,10 +28,12 @@ const ratings = require('./__routes/ratings');
 const dollarDefender = require('dollar-defender-middleware');
 
 //port number
-var port = process.env.PORT || 5000;
+var port = 5000;
 
 //prociding a static directory for front-end
-app.use(express.static(path.join(__dirname,'../front-end')))
+app.use(express.static(path.join(__dirname,'public')))
+
+
 
 
 //middleware
@@ -53,9 +55,8 @@ app.use('/users', users);
 app.use('/subjects', subjects);
 app.use('/ratings', ratings);
 
-//index route
-app.get('/', (req,res) => {
-    res.send('Invalid end point');
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 })
 
 //start server

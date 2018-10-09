@@ -25,7 +25,7 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http
-      .post(this.domain + '/users/register', user, {headers: headers})
+      .post('/users/register', user, {headers: headers})
       .pipe(map(res => res.json()));
   }
 

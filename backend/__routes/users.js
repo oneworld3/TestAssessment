@@ -190,7 +190,7 @@ router.put('/profile/updateProfile', passport.authenticate('jwt', { session: fal
                 user.username = req.body.username.toLowerCase();
                 user.password = req.body.password;
 
-                user.update((err) => {
+                user.save((err) => {
                     if (err) {
                         res.json({ success: false, message: err });
                     } else {
